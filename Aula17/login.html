@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Login — PlayVerse</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<header class="nav">
+
+    <div class="container navin">
+
+        <a class="brand" href="index.html">
+            PLAY<span>VERSE</span>
+        </a>
+
+        <nav class="links">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="loja.html">
+                Loja
+            </a>
+
+            <a href="playstation.html">
+                PlayStation
+            </a>
+
+            <a href="jogos.html">
+                Jogos
+            </a>
+
+            <a href="login.html?redirect=desenvolvedor">
+                Desenvolvedor
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="login">
+
+<form
+    class="form"
+    id="loginForm"
+>
+
+    <div class="kicker">
+        ÁREA RESTRITA
+    </div>
+
+    <h1>
+        Iniciar sessão
+    </h1>
+
+    <p class="muted">
+        Entre com suas credenciais para
+        acessar a área do desenvolvedor.
+    </p>
+
+
+    <div class="field">
+
+        <label for="numero">
+            Número
+        </label>
+
+        <input
+            id="numero"
+            type="text"
+            inputmode="numeric"
+            placeholder="Digite seu número"
+            required
+        >
+
+    </div>
+
+
+    <div class="field">
+
+        <label for="senha">
+            Senha
+        </label>
+
+        <input
+            id="senha"
+            type="password"
+            placeholder="Digite sua senha"
+            required
+        >
+
+    </div>
+
+
+    <button
+        type="submit"
+        class="btn primary full"
+    >
+        Iniciar sessão
+    </button>
+
+
+    <p
+        id="msg"
+        class="login-message"
+    ></p>
+
+
+    <p class="muted login-help">
+        Área exclusiva para desenvolvedores.
+    </p>
+
+</form>
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        PLAYVERSE — Sistema de acesso demonstrativo.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+const loginForm =
+    document.getElementById("loginForm");
+
+const numero =
+    document.getElementById("numero");
+
+const senha =
+    document.getElementById("senha");
+
+const mensagem =
+    document.getElementById("msg");
+
+
+loginForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const numeroDigitado =
+            numero.value.trim();
+
+        const senhaDigitada =
+            senha.value;
+
+
+        /*
+         * CREDENCIAIS DO DESENVOLVEDOR
+         */
+
+        const numeroCorreto =
+            "946997926";
+
+        const senhaCorreta =
+            "Cândida";
+
+
+        if (
+            numeroDigitado === numeroCorreto &&
+            senhaDigitada === senhaCorreta
+        ) {
+
+            /*
+             * Cria a sessão
+             */
+
+            localStorage.setItem(
+                "playverseDeveloperLogged",
+                "true"
+            );
+
+
+            mensagem.style.color =
+                "#4ade80";
+
+            mensagem.textContent =
+                "Login realizado! Entrando na área do desenvolvedor...";
+
+
+            /*
+             * Verifica para onde o usuário
+             * deve ser enviado.
+             */
+
+            const parametros =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+            const destino =
+                parametros.get("redirect");
+
+
+            setTimeout(
+                function() {
+
+                    if (
+                        destino === "desenvolvedor"
+                    ) {
+
+                        window.location.href =
+                            "desenvolvedor.html";
+
+                    } else {
+
+                        window.location.href =
+                            "index.html";
+
+                    }
+
+                },
+                700
+            );
+
+
+        } else {
+
+            mensagem.style.color =
+                "#ff5c70";
+
+            mensagem.textContent =
+                "Número ou senha incorretos.";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

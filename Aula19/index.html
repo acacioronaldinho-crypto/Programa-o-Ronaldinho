@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verificação</title>
+</head>
+<body>
+    <div id="d1" >É RICO OU POBRE</div>
+
+
+    <script>
+
+        function verificar(){
+            var n1=window.document.getElementById(`ef`)
+            var n= Number(n1.value)
+            var d1=window.document.getElementById(`d1`)
+
+            if(n>100000){
+                d1.innerHTML= `O seu capital é de ${n} dolares, voce é rico.`
+            }
+
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>

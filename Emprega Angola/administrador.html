@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Administrador | Emprega Angola</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+<section id="loginAdmin" class="admin-login">
+
+<div class="login-card">
+
+<div class="admin-avatar">
+
+<img
+src="Na alta.jpeg"
+alt="Administrador"
+>
+
+</div>
+
+<h1>Área Administrativa</h1>
+
+<p>Área reservada para gestão de candidatos.</p>
+
+
+<form id="adminForm">
+
+<label>Pass</label>
+
+<input
+type="text"
+id="adminPass"
+placeholder="Digite o passe"
+required
+>
+
+
+<label>Senha</label>
+
+<input
+type="password"
+id="adminSenha"
+placeholder="Digite a senha"
+required
+>
+
+<button class="btn-principal" type="submit">
+Entrar no painel
+</button>
+
+<p id="erroAdmin" class="erro"></p>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+
+
+
+<section id="painelAdmin" class="painel-admin escondido">
+
+<header>
+
+<div class="logo">
+<span>EA</span>
+Emprega Angola
+</div>
+
+<nav>
+
+<a href="index.html">Site</a>
+
+<button onclick="sairAdmin()">
+Sair
+</button>
+
+</nav>
+
+</header>
+
+
+<div class="admin-container">
+
+
+<section class="admin-profile">
+
+<img
+src="Na alta.jpeg"
+alt="Administrador"
+>
+
+<div>
+
+<span>ADMINISTRADOR: Ronaldinho Acácio Cupaia</span>
+
+<h1>Gestão de Recrutamento</h1>
+
+<p>
+Responsável pela análise e verificação das candidaturas.
+</p>
+
+</div>
+
+</section>
+
+
+<div class="dashboard-cards">
+
+<div>
+<span>Candidaturas</span>
+<strong id="totalCandidatos">0</strong>
+</div>
+
+<div>
+<span>Selecionados</span>
+<strong id="totalSelecionados">0</strong>
+</div>
+
+<div>
+<span>Verificação</span>
+<strong id="totalVerificacao">0</strong>
+</div>
+
+<div>
+<span>Áreas</span>
+<strong>4</strong>
+</div>
+
+</div>
+
+
+<section class="candidatos-section">
+
+<div class="section-title">
+
+<span>GESTÃO</span>
+
+<h2>Candidatos</h2>
+
+</div>
+
+
+<div class="filtros">
+
+<select id="filtroArea" onchange="mostrarCandidatos()">
+
+<option value="Todos">Todas as áreas</option>
+
+<option value="Tecnologia">Tecnologia</option>
+
+<option value="Saúde">Saúde</option>
+
+<option value="Educação">Educação</option>
+
+<option value="Administração">Administração</option>
+
+</select>
+
+</div>
+
+
+<div id="listaCandidatos"></div>
+
+
+</section>
+
+
+<section class="verificacao">
+
+<div class="section-title">
+
+<span>DOCUMENTAÇÃO</span>
+
+<h2>Verificação dos vencedores</h2>
+
+</div>
+
+<div id="listaVerificacao"></div>
+
+</section>
+
+
+</div>
+
+</section>
+
+<section class="publicar-vencedores" id="publicarVencedores">
+
+    <div class="admin-section-title">
+
+        <span>GESTÃO DE RESULTADOS</span>
+
+        <h2>Publicar vencedores</h2>
+
+        <p>
+            Publique os candidatos selecionados para que
+            apareçam automaticamente na página de vencedores.
+        </p>
+
+    </div>
+
+
+    <div class="publicar-box">
+
+        <form id="formVencedor">
+
+            <div class="campo-admin">
+
+                <label for="nomeVencedor">
+                    Nome do candidato
+                </label>
+
+                <input
+                    type="text"
+                    id="nomeVencedor"
+                    placeholder="Nome completo do candidato"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-admin">
+
+                <label for="areaVencedor">
+                    Área do concurso
+                </label>
+
+                <select
+                    id="areaVencedor"
+                    required
+                >
+
+                    <option value="">
+                        Selecionar área
+                    </option>
+
+                    <option value="Tecnologia">
+                        Tecnologia
+                    </option>
+
+                    <option value="Saúde">
+                        Saúde
+                    </option>
+
+                    <option value="Educação">
+                        Educação
+                    </option>
+
+                    <option value="Administração">
+                        Administração
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo-admin">
+
+                <label for="especialidadeVencedor">
+                    Curso / Especialidade
+                </label>
+
+                <input
+                    type="text"
+                    id="especialidadeVencedor"
+                    placeholder="Ex.: Programação Front-end"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-admin">
+
+                <label for="pontuacaoVencedor">
+                    Pontuação
+                </label>
+
+                <input
+                    type="number"
+                    id="pontuacaoVencedor"
+                    min="0"
+                    max="100"
+                    placeholder="Ex.: 92"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-admin">
+
+                <label for="codigoCandidato">
+                    Código da candidatura
+                </label>
+
+                <input
+                    type="text"
+                    id="codigoCandidato"
+                    placeholder="Ex.: EA-2026-00125"
+                    required
+                >
+
+            </div>
+
+
+            <div class="campo-admin">
+
+                <label for="dataResultado">
+                    Data da publicação
+                </label>
+
+                <input
+                    type="date"
+                    id="dataResultado"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn-publicar"
+            >
+
+                ✓ Publicar vencedor
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- LISTA DOS PUBLICADOS -->
+
+    <div class="admin-resultados">
+
+        <div class="admin-resultados-header">
+
+            <h3>
+                Vencedores publicados
+            </h3>
+
+            <button
+                onclick="limparTodosVencedores()"
+                class="btn-limpar"
+            >
+                Limpar lista
+            </button>
+
+        </div>
+
+
+        <div id="listaAdminVencedores">
+
+            <!-- JavaScript coloca os vencedores aqui -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

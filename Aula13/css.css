@@ -1,0 +1,37 @@
+table{
+    width: 1000px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: burlywood;
+    border-radius: 2px;
+    margin: auto;
+    box-shadow: 20px 20px 40px;
+    
+}
+h1{
+    border: 20px;
+    background-color: aqua;
+    text-align: center;
+}
+
+
+
+
+td{
+    border: 1px solid black;
+    padding: 5px;
+    
+}
+
+#D1{
+    text-align: center;
+    color:red;
+}
+#D2{
+    text-align: center;
+    color: blue;
+}
+
+#D4{
+    text-align: center;
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Candidatura | Emprega Angola</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<span>EA</span>
+Emprega Angola
+</div>
+
+<nav>
+<a href="index.html">Início</a>
+<a href="tecnologia.html">Tecnologia</a>
+<a href="saude.html">Saúde</a>
+<a href="educacao.html">Educação</a>
+<a href="candidatura.html">Candidatura</a>
+<a href="vencedores.html">
+    Vencedores
+</a>
+<a href="administrador.html">Administrador</a>
+
+</nav>
+
+</header>
+
+
+<section class="form-section">
+
+<div class="form-header">
+
+<span>CANDIDATURA DIGITAL</span>
+
+<h1>Candidate-se a uma oportunidade</h1>
+
+<p>
+Preencha corretamente os seus dados.
+</p>
+
+</div>
+
+
+<form id="formCandidatura">
+
+<div class="form-grid">
+
+<div class="input-group">
+
+<label>Nome completo</label>
+
+<input
+type="text"
+id="nome"
+required
+placeholder="Ex.: João Manuel"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Email</label>
+
+<input
+type="email"
+id="email"
+required
+placeholder="email@exemplo.com"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Telefone</label>
+
+<input
+type="tel"
+id="telefone"
+required
+placeholder="+244 900 000 000"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Área</label>
+
+<select id="area" required>
+
+<option value="">Selecione</option>
+<option value="Tecnologia">Tecnologia</option>
+<option value="Saúde">Saúde</option>
+<option value="Educação">Educação</option>
+<option value="Administração">Administração</option>
+
+</select>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Especialidade</label>
+
+<input
+type="text"
+id="especialidade"
+required
+placeholder="Ex.: Programador Front-end"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Nível académico</label>
+
+<select id="formacao" required>
+
+<option value="">Selecione</option>
+<option value="medio">Ensino Médio</option>
+<option value="tecnico">Técnico</option>
+<option value="licenciatura">Licenciatura</option>
+<option value="mestrado">Mestrado</option>
+<option value="doutoramento">Doutoramento</option>
+
+</select>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Anos de experiência</label>
+
+<input
+type="number"
+id="experiencia"
+min="0"
+max="50"
+required
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Teste profissional</label>
+
+<select id="teste" required>
+
+<option value="">Selecione</option>
+<option value="100">Excelente</option>
+<option value="85">Muito bom</option>
+<option value="70">Bom</option>
+<option value="55">Regular</option>
+<option value="40">Insuficiente</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="input-group full">
+
+<label>Resumo das suas competências</label>
+
+<textarea
+id="competencias"
+rows="6"
+required
+placeholder="Descreva as suas principais competências..."
+></textarea>
+
+</div>
+
+
+<div class="upload-box">
+
+<label>
+
+📄 Certificado ou documento académico
+
+<input
+type="file"
+id="certificado"
+accept=".pdf,.jpg,.jpeg,.png"
+>
+
+</label>
+
+<p>
+O documento será utilizado para a etapa de verificação.
+</p>
+
+</div>
+
+
+<button type="submit" class="btn-principal">
+Enviar candidatura
+</button>
+
+</form>
+
+
+<div id="resultadoCandidatura" class="resultado-candidatura"></div>
+
+</section>
+
+
+<footer>
+
+<strong>Emprega Angola</strong>
+
+<p>
+Processo digital de candidatura.
+</p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

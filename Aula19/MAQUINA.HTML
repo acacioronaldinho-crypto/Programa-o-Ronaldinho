@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MÁQUINA</title>
+</head>
+<body>
+    <h1>MÁQUINA CALCULADORA</h1>
+    <p>digite o primeiro número</p>
+    <input type="number" name="TN1" id="TN1"> + * - /
+    <p>digite o segundo número</p>
+    <input type="number" name="TN2" id="TN2">
+
+    <input type="button" value="somar" onclick="somar()">
+
+    <input type="button" value="Multiplicação" onclick="multiplicação()">
+
+    <input type="button" value="subtração" onclick="subtração()">
+
+
+    <input type="button" value="divisão" onclick="divisão()">
+    <div id="res"> Resultado</div>
+    <script>
+        function somar(){
+            var tn1=window.document.getElementById('TN1')
+            var tn2=window.document.getElementById('TN2')
+            var res=window.document.getElementById('res')
+            var n1= Number(tn1.value)
+            var n2= Number(tn2.value)
+            var s=n1+n2
+            res.innerHTML=`${s}`
+           }  
+
+
+            function multiplicação(){
+            var tn1=window.document.getElementById('TN1')
+            var tn2=window.document.getElementById('TN2')
+            var res=window.document.getElementById('res')
+            var n1= Number(tn1.value)
+            var n2= Number(tn2.value)
+            var m=n1*n2
+            res.innerHTML=`${m}`
+
+        } 
+        function Subtração(){
+            var tn1=window.document.getElementById('TN1')
+            var tn2=window.document.getElementById('TN2')
+            var res=window.document.getElementById('res')
+            var n1= Number(tn1.value)
+            var n2= Number(tn2.value)
+            var m=n1-n2
+            res.innerHTML=`${s}`
+
+        }
+
+
+
+function divisão(){
+            var tn1=window.document.getElementById('TN1')
+            var tn2=window.document.getElementById('TN2')
+            var res=window.document.getElementById('res')
+            var n1= Number(tn1.value)
+            var n2= Number(tn2.value)
+            var m=n1/n2
+            res.innerHTML=`${s}`
+
+        }
+         function subtração(){
+            var tn1=window.document.getElementById('TN1')
+            var tn2=window.document.getElementById('TN2')
+            var res=window.document.getElementById('res')
+            var n1= Number(tn1.value)
+            var n2= Number(tn2.value)
+            var s=n1-n2
+            res.innerHTML=`${s}`
+           } 
+            function divisão(){
+            var tn1=window.document.getElementById('TN1')
+            var tn2=window.document.getElementById('TN2')
+            var res=window.document.getElementById('res')
+            var n1= Number(tn1.value)
+            var n2= Number(tn2.value)
+            var s=n1/n2
+            res.innerHTML=`${s}`
+           } 
+
+
+    
+    </script>
+    
+</body>
+</html>

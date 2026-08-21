@@ -1,0 +1,44 @@
+h1{
+text-align: center;
+
+
+}
+
+p{
+text-align: center;
+background-color: blue;
+width: 500px;
+margin: auto;
+font-size: 50px;
+}
+
+p:hover{
+background-color: brown;
+}
+a{
+font-size: 30px;
+color: brown;
+display: block;
+width: 500px;
+margin: auto;
+border-radius: 40px;
+
+background-color: blue;
+text-align: center;
+margin-top: 3px;
+}
+
+a:hover{
+    color: orange;
+}
+
+a:visited{
+
+    color: blue;
+}
+
+a:active{
+
+color: white;
+
+}

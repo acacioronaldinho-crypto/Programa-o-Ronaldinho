@@ -1,0 +1,32 @@
+Body{
+background-color: aquamarine;
+margin-top: 20px;
+}
+
+main{
+    width: 400px;
+    height: 800px;
+    border-style: double;
+    margin: auto;
+    box-shadow: 10px 10px 20px black;
+    padding: 10px;
+}
+
+main>form>h1{
+    text-align: center;
+    box-shadow: 10px 10px 10px;
+    margin-top: 20px;
+    
+}
+
+main>img{
+    display: block;
+    margin: auto;
+}
+
+main>p{
+    text-align: center;
+}
+
+
+

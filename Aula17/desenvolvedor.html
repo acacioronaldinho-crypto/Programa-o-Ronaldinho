@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>Desenvolvedor — PlayVerse</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+    <script>
+
+const developerLogged =
+    localStorage.getItem(
+        "playverseDeveloperLogged"
+    );
+
+
+if (developerLogged !== "true") {
+
+    window.location.href =
+        "login.html?redirect=desenvolvedor";
+
+}
+
+</script>
+
+<header class="nav">
+
+    <div class="container navin">
+
+        <a class="brand" href="index.html">
+            PLAY<span>VERSE</span>
+        </a>
+
+        <nav class="links">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="loja.html">
+                Loja
+            </a>
+
+            <a href="playstation.html">
+                PlayStation
+            </a>
+
+            <a href="jogos.html">
+                Jogos
+            </a>
+
+           <a href="login.html?redirect=desenvolvedor">
+    Desenvolvedor
+</a>
+
+        </nav>
+
+        <a class="cta" href="login.html">
+            Entrar
+        </a>
+
+        <a
+    class="cta"
+    href="#"
+    onclick="logout()"
+>
+    Sair
+</a>
+
+    </div>
+
+</header>
+
+
+<main class="section">
+
+<div class="container">
+
+
+    <!-- BANNER PRINCIPAL -->
+
+    <div class="banner">
+
+        <div>
+
+            <div class="kicker">
+                PlayVerse Dev
+            </div>
+
+            <h1>
+                Crie a próxima grande experiência.
+            </h1>
+
+            <p>
+
+                Área dedicada a estúdios e desenvolvedores:
+                notícias, ferramentas, publicação e recursos
+                para jogos.
+
+            </p>
+
+            <a
+                class="btn primary"
+                href="login.html"
+            >
+                Área do desenvolvedor
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECURSOS -->
+
+    <section class="section">
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="kicker">
+                    Recursos
+                </div>
+
+                <h2>
+                    Do conceito ao lançamento
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <div class="cardbody">
+
+                    <h3>
+                        Documentação
+                    </h3>
+
+                    <p class="muted">
+
+                        Guias de integração, publicação
+                        e boas práticas.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="cardbody">
+
+                    <h3>
+                        SDK & APIs
+                    </h3>
+
+                    <p class="muted">
+
+                        Estruture serviços e experiências
+                        conectadas.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="cardbody">
+
+                    <h3>
+                        Analytics
+                    </h3>
+
+                    <p class="muted">
+
+                        Acompanhe métricas de desempenho
+                        e engajamento.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="cardbody">
+
+                    <h3>
+                        Publicação
+                    </h3>
+
+                    <p class="muted">
+
+                        Prepare sua página, materiais
+                        e lançamento.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTATO -->
+
+    <section class="contact-section">
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="kicker">
+                    Fale conosco
+                </div>
+
+                <h2>
+                    Entre em contato
+                </h2>
+
+                <p class="muted">
+
+                    Tem um projeto, parceria ou dúvida?
+                    Nossa equipe está pronta para conversar.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <!-- EMAIL -->
+
+            <a
+                class="contact-card"
+                href="acacioronaldinho@gmail.com"
+            >
+
+                <div class="contact-icon">
+                    ✉
+                </div>
+
+                <div>
+
+                    <h3>
+                        E-mail
+                    </h3>
+
+                    <p>
+                        acacioronaldinho@gmail.com
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                class="contact-card"
+                href="https://wa.me/244+946997926"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="contact-icon">
+                    ☎
+                </div>
+
+                <div>
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+                    <p>
+                        Fale conosco pelo WhatsApp
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                class="contact-card"
+                href="https://www.instagram.com/playverse"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="contact-icon">
+                    ◎
+                </div>
+
+                <div>
+
+                    <h3>
+                        Instagram
+                    </h3>
+
+                    <p>
+                        @playverse
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- FACEBOOK -->
+
+            <a
+                class="contact-card"
+                href="https://www.facebook.com/playverse"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <div class="contact-icon">
+                    f
+                </div>
+
+                <div>
+
+                    <h3>
+                        Facebook
+                    </h3>
+
+                    <p>
+                        facebook.com/playverse
+                    </p>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        PLAYVERSE — Área para desenvolvedores.
+
+    </div>
+
+</footer>
+<script>
+
+function logout() {
+
+    localStorage.removeItem(
+        "playverseDeveloperLogged"
+    );
+
+    window.location.href =
+        "login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

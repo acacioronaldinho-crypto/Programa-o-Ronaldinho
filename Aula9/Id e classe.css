@@ -1,0 +1,12 @@
+p{
+
+border-style: solid;
+background-color: aqua;
+
+    }
+
+    p#d1{
+
+        border-style: none;
+        background-color: white;
+    }

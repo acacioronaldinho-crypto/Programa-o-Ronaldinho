@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+    background-color: aqua;
+    background-image: linear-gradient(to right, blue, pink);
+}
+div{
+    border-style: solid;
+    height: 100px;
+    width: 100px;
+    margin-top: 10px;
+    background-color: blue;
+    display: inline-block;
+   
+}
