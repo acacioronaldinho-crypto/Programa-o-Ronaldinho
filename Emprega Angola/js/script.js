@@ -9,7 +9,7 @@
 ========================================== */
 
 const textoInicial = `
-Olá e seja muito bem-vindo ao Emprega Angola IA.
+Olá e seja muito bem-vindo ao Emprega Angola.
 
 Vamos usar a tecnologia para melhorar as condições
 do nosso país e ajudar a sociedade.
@@ -18,7 +18,7 @@ Esta plataforma foi criada para aproximar
 talentos, empresas e instituições em Angola.
 
 Aqui encontrará oportunidades nas áreas de
-tecnologia, saúde, educação e administração.
+tecnologia, saúde e educação.
 
 Faça a sua candidatura, participe nas avaliações,
 acompanhe os resultados e consulte as oportunidades.
@@ -27,7 +27,7 @@ A tecnologia pode transformar vidas,
 criar oportunidades e contribuir para o desenvolvimento
 de Angola.
 
-Obrigado por visitar o Emprega Angola IA.
+Obrigado por visitar o Emprega Angola.
 `;
 
 
