@@ -9,25 +9,20 @@
 ========================================== */
 
 const textoInicial = `
-Olá e seja muito bem-vindo ao Emprega Angola.
+Olá, e seja muito bem-vindo ao Emprega Angola.
 
-Vamos usar a tecnologia para melhorar as condições
-do nosso país e ajudar a sociedade.
+Vamos usar a tecnologia para melhorar as condiçõesdo nosso país e ajudar a sociedade.
 
-Esta plataforma foi criada para aproximar
-talentos, empresas e instituições em Angola.
+Esta plataforma foi criada para aproximartalentos, empresas e instituições em Angola.
 
-Aqui encontrará oportunidades nas áreas de
-tecnologia, saúde e educação.
+Aqui encontrará oportunidades nas áreas detecnologia, saúde e educação.
 
-Faça a sua candidatura, participe nas avaliações,
-acompanhe os resultados e consulte as oportunidades.
+Faça a sua candidatura, participe nas avaliações,acompanhe os resultados e consulte as oportunidades.
 
-A tecnologia pode transformar vidas,
-criar oportunidades e contribuir para o desenvolvimento
-de Angola.
+A tecnologia pode transformar vidas,criar oportunidades e contribuir para o desenvolvimentode Angola.
 
-Obrigado por visitar o Emprega Angola.
+Sua oportunidade de se integrar no mercado de trabalho está no Emprega Angola.
+Obrigado.
 `;
 
 
