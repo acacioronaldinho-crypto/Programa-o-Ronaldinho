@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Criar Carteira | Emprega Angola IA
+    </title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+           <link rel="shortcut icon" href="icons8-vendas-100.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <span>EA</span>
+        Emprega Angola
+    </div>
+
+    <nav>
+
+        <a href="index.html">Início</a>
+
+        <a href="tecnologia.html">
+            Tecnologia
+        </a>
+
+        <a href="saude.html">
+            Saúde
+        </a>
+
+        <a href="educacao.html">
+            Educação
+        </a>
+
+        <a href="candidatura.html">
+            Candidatura
+        </a>
+
+        <a href="carteira.html"
+           class="active">
+            Criar Carteira
+        </a>
+
+        <a href="vencedores.html">
+            Vencedores
+        </a>
+
+        <a href="administrador.html">
+            Administrador
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="carteira-page">
+
+    
+
+    <section class="carteira-hero">
+
+        <span>
+            PERFIL PROFISSIONAL
+        </span>
+
+        <h1>
+            Crie a sua Carteira Profissional
+        </h1>
+
+        <p>
+            Registe os seus dados, formação e área
+            profissional para participar nas
+            oportunidades disponíveis.
+        </p>
+
+    </section>
+
+
+    <section class="carteira-container">
+
+        <form id="formCarteira">
+
+
+            <!-- FOTO -->
+
+            <div class="foto-area">
+
+                <div class="foto-preview"
+                     id="fotoPreview">
+
+                    <span>
+                        👤
+                    </span>
+
+                </div>
+
+                <label class="btn-foto">
+
+                    Escolher fotografia
+
+                    <input
+                        type="file"
+                        id="foto"
+                        accept="image/*"
+                        hidden
+                        required
+                    >
+
+                </label>
+
+                <small>
+                    Utilize uma fotografia clara
+                    e atual.
+                </small>
+
+            </div>
+
+
+            <!-- DADOS PESSOAIS -->
+
+            <div class="form-section">
+
+                <div class="form-title">
+
+                    <span>01</span>
+
+                    <div>
+
+                        <h2>
+                            Dados pessoais
+                        </h2>
+
+                        <p>
+                            Informações do candidato
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Digite o seu nome completo"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Número de identificação
+                        </label>
+
+                        <input
+                            type="text"
+                            id="bi"
+                            placeholder="Número do BI"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Data de nascimento
+                        </label>
+
+                        <input
+                            type="date"
+                            id="nascimento"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Sexo
+                        </label>
+
+                        <select id="sexo"
+                                required>
+
+                            <option value="">
+                                Selecionar
+                            </option>
+
+                            <option value="Masculino">
+                                Masculino
+                            </option>
+
+                            <option value="Feminino">
+                                Feminino
+                            </option>
+
+                            <option value="Outro">
+                                Outro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Telefone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            placeholder="+244 9XX XXX XXX"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- E-MAIL -->
+
+                    <div class="form-field">
+
+                        <label>
+                            E-mail para receber a resposta
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="exemplo@email.com"
+                            required
+                        >
+
+                        <small>
+                            A resposta da candidatura será
+                            enviada para este endereço.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Província
+                        </label>
+
+                        <select id="provincia"
+                                required>
+
+                            <option value="">
+                                Selecionar província
+                            </option>
+
+                            <option>
+                                Luanda
+                            </option>
+
+                            <option>
+                                Huambo
+                            </option>
+
+                            <option>
+                                Benguela
+                            </option>
+
+                            <option>
+                                Bié
+                            </option>
+
+                            <option>
+                                Cabinda
+                            </option>
+
+                            <option>
+                                Cunene
+                            </option>
+
+                            <option>
+                                Cuando Cubango
+                            </option>
+
+                            <option>
+                                Cuanza Norte
+                            </option>
+
+                            <option>
+                                Cuanza Sul
+                            </option>
+
+                            <option>
+                                Malanje
+                            </option>
+
+                            <option>
+                                Namibe
+                            </option>
+
+                            <option>
+                                Uíge
+                            </option>
+
+                            <option>
+                                Zaire
+                            </option>
+
+                            <option>
+                                Lunda Norte
+                            </option>
+
+                            <option>
+                                Lunda Sul
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Município
+                        </label>
+
+                        <input
+                            type="text"
+                            id="municipio"
+                            placeholder="Digite o município"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMAÇÃO -->
+
+            <div class="form-section">
+
+                <div class="form-title">
+
+                    <span>02</span>
+
+                    <div>
+
+                        <h2>
+                            Formação académica
+                        </h2>
+
+                        <p>
+                            Informações sobre a formação
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Nível académico
+                        </label>
+
+                        <select id="nivel"
+                                required>
+
+                            <option value="">
+                                Selecionar
+                            </option>
+
+                            <option>
+                                Ensino Médio
+                            </option>
+
+                            <option>
+                                Técnico Médio
+                            </option>
+
+                            <option>
+                                Licenciatura
+                            </option>
+
+                            <option>
+                                Mestrado
+                            </option>
+
+                            <option>
+                                Doutoramento
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Curso
+                        </label>
+
+                        <input
+                            type="text"
+                            id="curso"
+                            placeholder="Ex.: Engenharia Informática"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field full">
+
+                        <label>
+                            Instituição de ensino
+                        </label>
+
+                        <input
+                            type="text"
+                            id="instituicao"
+                            placeholder="Nome da instituição"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ÁREA PROFISSIONAL -->
+
+            <div class="form-section">
+
+                <div class="form-title">
+
+                    <span>03</span>
+
+                    <div>
+
+                        <h2>
+                            Área profissional
+                        </h2>
+
+                        <p>
+                            Escolha a área em que deseja concorrer
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Área
+                        </label>
+
+                        <select
+                            id="area"
+                            required
+                            onchange="atualizarEspecialidades()"
+                        >
+
+                            <option value="">
+                                Selecionar área
+                            </option>
+
+                            <option value="Tecnologia">
+                                Tecnologia
+                            </option>
+
+                            <option value="Saúde">
+                                Saúde
+                            </option>
+
+                            <option value="Educação">
+                                Educação
+                            </option>
+
+                            <option value="Administração">
+                                Administração
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Especialidade
+                        </label>
+
+                        <select
+                            id="especialidade"
+                            required
+                        >
+
+                            <option value="">
+                                Primeiro selecione a área
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field full">
+
+                        <label>
+                            Experiência profissional
+                        </label>
+
+                        <textarea
+                            id="experiencia"
+                            rows="5"
+                            placeholder="Descreva resumidamente a sua experiência profissional..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DOCUMENTOS -->
+
+            <div class="form-section">
+
+                <div class="form-title">
+
+                    <span>04</span>
+
+                    <div>
+
+                        <h2>
+                            Documentação
+                        </h2>
+
+                        <p>
+                            Documentos necessários para a candidatura
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Certificado académico
+                        </label>
+
+                        <input
+                            type="file"
+                            id="certificado"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Curriculum Vitae
+                        </label>
+
+                        <input
+                            type="file"
+                            id="cv"
+                            accept=".pdf,.doc,.docx"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- AUTORIZAÇÃO -->
+
+            <div class="consentimento">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="consentimento"
+                        required
+                    >
+
+                    <span>
+
+                        Confirmo que as informações
+                        fornecidas são verdadeiras e
+                        autorizo o tratamento dos meus
+                        dados para efeitos de candidatura.
+
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn-criar-carteira"
+            >
+
+                CRIAR MINHA CARTEIRA
+
+            </button>
+
+
+            <div
+                id="mensagemCarteira"
+                class="mensagem-carteira"
+            ></div>
+
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <strong>
+        Emprega Angola 
+    </strong>
+
+    <p>
+        Tecnologia para aproximar pessoas
+        e oportunidades.
+    </p>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const candidatos =
+            JSON.parse(
+                localStorage.getItem(
+                    "candidatosEmpregaAngola"
+                )
+            ) || [];
+
+
+        if (candidatos.length === 0) {
+
+            const aviso =
+                document.createElement("div");
+
+            aviso.className =
+                "aviso-carteira";
+
+
+            aviso.innerHTML = `
+
+                <h2>
+                    Carteira profissional necessária
+                </h2>
+
+                <p>
+                    Antes de se candidatar a um
+                    concurso, precisa criar a sua
+                    carteira profissional.
+                </p>
+
+                <a href="carteira.html">
+                    CRIAR MINHA CARTEIRA
+                </a>
+
+            `;
+
+
+            document.body.prepend(aviso);
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

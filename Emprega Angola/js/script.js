@@ -1538,3 +1538,465 @@ document.addEventListener(
 
     }
 );
+
+/* =========================================================
+   CARTEIRA PROFISSIONAL
+========================================================= */
+
+const especialidades = {
+
+    Tecnologia: [
+
+        "Programação Front-end",
+
+        "Programação Back-end",
+
+        "Full Stack",
+
+        "Desenvolvimento Mobile",
+
+        "Redes de Computadores",
+
+        "Cibersegurança",
+
+        "Suporte Técnico",
+
+        "Banco de Dados",
+
+        "Inteligência Artificial"
+
+    ],
+
+
+    Saúde: [
+
+        "Enfermagem",
+
+        "Medicina",
+
+        "Farmácia",
+
+        "Análises Clínicas",
+
+        "Radiologia",
+
+        "Fisioterapia",
+
+        "Nutrição",
+
+        "Técnico de Saúde"
+
+    ],
+
+
+    Educação: [
+
+        "Professor do Ensino Geral",
+
+        "Educação Infantil",
+
+        "Matemática",
+
+        "Língua Portuguesa",
+
+        "Informática",
+
+        "Formação Profissional",
+
+        "Gestão Escolar"
+
+    ],
+
+
+    Administração: [
+
+        "Administração Pública",
+
+        "Gestão Administrativa",
+
+        "Recursos Humanos",
+
+        "Contabilidade",
+
+        "Finanças",
+
+        "Gestão de Projetos"
+
+    ]
+
+};
+
+
+function atualizarEspecialidades() {
+
+    const area =
+        document.getElementById("area");
+
+    const especialidade =
+        document.getElementById(
+            "especialidade"
+        );
+
+
+    if (!area || !especialidade) {
+
+        return;
+
+    }
+
+
+    especialidade.innerHTML =
+        `<option value="">
+            Selecionar especialidade
+        </option>`;
+
+
+    if (!especialidades[area.value]) {
+
+        return;
+
+    }
+
+
+    especialidades[area.value]
+        .forEach(function(item) {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+            option.value = item;
+
+            option.textContent = item;
+
+            especialidade.appendChild(
+                option
+            );
+
+        });
+
+}
+
+
+/* =========================================================
+   PRÉ-VISUALIZAÇÃO DA FOTO
+========================================================= */
+
+const campoFoto =
+    document.getElementById("foto");
+
+
+if (campoFoto) {
+
+    campoFoto.addEventListener(
+        "change",
+        function(event) {
+
+            const arquivo =
+                event.target.files[0];
+
+
+            if (!arquivo) {
+
+                return;
+
+            }
+
+
+            const leitor =
+                new FileReader();
+
+
+            leitor.onload =
+                function(e) {
+
+                    const preview =
+                        document.getElementById(
+                            "fotoPreview"
+                        );
+
+
+                    preview.innerHTML = `
+
+                        <img
+                            src="${e.target.result}"
+                            alt="Foto do candidato"
+                        >
+
+                    `;
+
+                };
+
+
+            leitor.readAsDataURL(arquivo);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CRIAÇÃO DA CARTEIRA
+========================================================= */
+
+const formCarteira =
+    document.getElementById(
+        "formCarteira"
+    );
+
+
+if (formCarteira) {
+
+    formCarteira.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const mensagem =
+                document.getElementById(
+                    "mensagemCarteira"
+                );
+
+
+            const candidato = {
+
+                id:
+                    "EA-" +
+                    Date.now(),
+
+                nome:
+                    document.getElementById(
+                        "nome"
+                    ).value.trim(),
+
+                bi:
+                    document.getElementById(
+                        "bi"
+                    ).value.trim(),
+
+                nascimento:
+                    document.getElementById(
+                        "nascimento"
+                    ).value,
+
+                sexo:
+                    document.getElementById(
+                        "sexo"
+                    ).value,
+
+                telefone:
+                    document.getElementById(
+                        "telefone"
+                    ).value.trim(),
+
+                email:
+                    document.getElementById(
+                        "email"
+                    ).value.trim(),
+
+                provincia:
+                    document.getElementById(
+                        "provincia"
+                    ).value,
+
+                municipio:
+                    document.getElementById(
+                        "municipio"
+                    ).value.trim(),
+
+                nivel:
+                    document.getElementById(
+                        "nivel"
+                    ).value,
+
+                curso:
+                    document.getElementById(
+                        "curso"
+                    ).value.trim(),
+
+                instituicao:
+                    document.getElementById(
+                        "instituicao"
+                    ).value.trim(),
+
+                area:
+                    document.getElementById(
+                        "area"
+                    ).value,
+
+                especialidade:
+                    document.getElementById(
+                        "especialidade"
+                    ).value,
+
+                experiencia:
+                    document.getElementById(
+                        "experiencia"
+                    ).value.trim(),
+
+                dataCriacao:
+                    new Date().toISOString()
+
+            };
+
+
+            const candidatos =
+                JSON.parse(
+                    localStorage.getItem(
+                        "candidatosEmpregaAngola"
+                    )
+                ) || [];
+
+
+            candidatos.push(candidato);
+
+
+            localStorage.setItem(
+
+                "candidatosEmpregaAngola",
+
+                JSON.stringify(candidatos)
+
+            );
+
+
+           mensagem.style.color = "#23603d";
+
+mensagem.innerHTML = `
+
+    <div class="carteira-sucesso">
+
+        <div class="sucesso-icone">
+            ✓
+        </div>
+
+        <h3>
+            Carteira criada com sucesso!
+        </h3>
+
+        <p>
+            Parabéns, <strong>${candidato.nome}</strong>.
+        </p>
+
+        <p>
+            A sua carteira profissional foi criada
+            e você está agora
+            <strong>APTO PARA SE CANDIDATAR</strong>
+            às oportunidades disponíveis.
+        </p>
+
+        <div class="codigo-candidato">
+
+            Código do candidato:
+
+            <strong>
+                ${candidato.id}
+            </strong>
+
+        </div>
+
+        <p>
+            As informações sobre a sua candidatura
+            serão enviadas para:
+        </p>
+
+        <strong>
+            ${candidato.email}
+        </strong>
+
+        <br><br>
+
+        <a
+            href="candidatura.html"
+            class="btn-candidatar"
+        >
+            CANDIDATAR-ME AGORA
+        </a>
+
+    </div>
+
+`;
+
+
+            formCarteira.reset();
+
+
+            document.getElementById(
+                "fotoPreview"
+            ).innerHTML = `
+                <span>👤</span>
+            `;
+
+        }
+    );
+
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const bloqueio =
+            document.getElementById(
+                "bloqueioCarteira"
+            );
+
+        const area =
+            document.getElementById(
+                "areaCandidatura"
+            );
+
+
+        // Só executa na página de candidatura
+        if (!bloqueio || !area) {
+
+            return;
+
+        }
+
+
+        const candidatos =
+            JSON.parse(
+                localStorage.getItem(
+                    "candidatosEmpregaAngola"
+                )
+            ) || [];
+
+
+        /*
+         * Se não existe carteira:
+         * candidatura continua bloqueada.
+         */
+
+        if (candidatos.length === 0) {
+
+            bloqueio.style.display =
+                "block";
+
+            area.classList.remove(
+                "liberada"
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * Se já existe carteira:
+         * libera a candidatura.
+         */
+
+        bloqueio.style.display =
+            "none";
+
+        area.classList.add(
+            "liberada"
+        );
+
+    }
+);
