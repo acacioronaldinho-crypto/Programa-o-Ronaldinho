@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hospitais | SaúdeAngola</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>+</span> SaúdeAngola
+    </div>
+
+    <nav>
+        <a href="../index.html">Início</a>
+        <a href="doencas.html">Doenças</a>
+        <a href="hiv.html">HIV</a>
+        <a href="hospitais.html">Hospitais</a>
+    </nav>
+
+</header>
+
+<section class="page-header">
+
+    <span class="badge">REDE DE SAÚDE</span>
+
+    <h1>Hospitais</h1>
+
+    <p>
+        Consulte hospitais disponíveis
+        por província.
+    </p>
+
+</section>
+
+<section class="page-content">
+
+    <div class="form-container">
+
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="Pesquisar hospital..."
+        >
+
+        <select id="provincia">
+
+            <option value="">
+                Todas as províncias
+            </option>
+
+            <option value="Luanda">
+                Luanda
+            </option>
+
+            <option value="Huambo">
+                Huambo
+            </option>
+
+            <option value="Benguela">
+                Benguela
+            </option>
+
+            <option value="Huíla">
+                Huíla
+            </option>
+
+            <option value="Bié">
+                Bié
+            </option>
+
+        </select>
+
+    </div>
+
+    <br>
+
+    <div id="listaHospitais" class="cards"></div>
+
+</section>
+
+<footer>
+
+    <div class="copyright">
+        © 2026 SaúdeAngola
+    </div>
+
+</footer>
+
+<script>
+
+async function carregarHospitais() {
+
+    const pesquisa =
+        document.getElementById("pesquisa").value;
+
+    const provincia =
+        document.getElementById("provincia").value;
+
+    const url =
+        `../api/hospitais?q=${encodeURIComponent(pesquisa)}&provincia=${encodeURIComponent(provincia)}`;
+
+    try {
+
+        const resposta = await fetch(url);
+
+        const hospitais = await resposta.json();
+
+        const lista =
+            document.getElementById("listaHospitais");
+
+        lista.innerHTML = "";
+
+        hospitais.forEach(hospital => {
+
+            lista.innerHTML += `
+
+                <div class="card">
+
+                    <div class="card-icon">🏥</div>
+
+                    <h3>${hospital.nome}</h3>
+
+                    <p>
+                        <strong>Província:</strong>
+                        ${hospital.provincia}
+                    </p>
+
+                    <p>
+                        <strong>Município:</strong>
+                        ${hospital.municipio}
+                    </p>
+
+                    <p>
+                        ${hospital.tipo}
+                    </p>
+
+                    ${
+                        hospital.emergencia
+                        ? "<p>🚑 Atendimento de emergência</p>"
+                        : ""
+                    }
+
+                </div>
+
+            `;
+
+        });
+
+    } catch (erro) {
+
+        document.getElementById("listaHospitais").innerHTML =
+        `
+            <div class="card">
+                <h3>Não foi possível carregar os dados.</h3>
+            </div>
+        `;
+
+    }
+
+}
+
+document
+    .getElementById("pesquisa")
+    .addEventListener("input", carregarHospitais);
+
+document
+    .getElementById("provincia")
+    .addEventListener("change", carregarHospitais);
+
+carregarHospitais();
+
+</script>
+
+</body>
+</html>

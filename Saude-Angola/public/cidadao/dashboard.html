@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Painel do Cidadão</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+<span>+</span> SaúdeAngola
+</div>
+
+<button
+onclick="logout()"
+class="btn btn-outline">
+
+Sair
+
+</button>
+
+</header>
+
+<section class="page-header">
+
+<span class="badge">
+ÁREA DO CIDADÃO
+</span>
+
+<h1 id="nomeUsuario">
+Bem-vindo
+</h1>
+
+<p>
+O seu centro digital de informação em saúde.
+</p>
+
+</section>
+
+<section class="page-content">
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-icon">
+🏥
+</div>
+
+<h3>
+Hospitais
+</h3>
+
+<p>
+Encontre hospitais disponíveis.
+</p>
+
+<a href="../paginas/hospitais.html">
+Consultar →
+</a>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+🧬
+</div>
+
+<h3>
+Doenças
+</h3>
+
+<p>
+Consulte informação educativa.
+</p>
+
+<a href="../paginas/doencas.html">
+Consultar →
+</a>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+💊
+</div>
+
+<h3>
+Simuladores
+</h3>
+
+<p>
+Explore as ferramentas educativas.
+</p>
+
+<a href="../simuladores/index.html">
+Abrir →
+</a>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+📚
+</div>
+
+<h3>
+Educação
+</h3>
+
+<p>
+Aprenda mais sobre prevenção.
+</p>
+
+<a href="../paginas/educacao.html">
+Aprender →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const logado =
+localStorage.getItem("saLogged");
+
+if(logado !== "true"){
+
+window.location.href =
+"../login.html";
+
+}
+
+const usuario =
+JSON.parse(
+localStorage.getItem("saUser")
+);
+
+if(usuario){
+
+document
+.getElementById("nomeUsuario")
+.textContent =
+"Olá, " + usuario.nome;
+
+}
+
+function logout(){
+
+localStorage.removeItem(
+"saLogged"
+);
+
+localStorage.removeItem(
+"saUser"
+);
+
+window.location.href =
+"../login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simulador HIV | SaúdeAngola</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        .simulator {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .progress {
+            height: 10px;
+            background: #dcebed;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 25px 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 16%;
+            background: #00a896;
+            transition: .4s;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .step-number {
+            color: #087f8c;
+            font-weight: bold;
+        }
+
+        .sim-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>+</span> SaúdeAngola
+    </div>
+
+    <a href="index.html" class="btn btn-outline">
+        Voltar
+    </a>
+
+</header>
+
+<section class="page-header">
+
+    <span class="badge">SIMULAÇÃO EDUCATIVA</span>
+
+    <h1>HIV</h1>
+
+    <p>
+        Jornada educativa de acompanhamento.
+    </p>
+
+</section>
+
+<section class="page-content">
+
+<div class="simulator">
+
+    <div class="card">
+
+        <h2 id="tituloEtapa">
+            Etapa 1 — Informação
+        </h2>
+
+        <div class="progress">
+
+            <div
+                id="progressBar"
+                class="progress-bar">
+            </div>
+
+        </div>
+
+        <div class="step active">
+
+            <span class="step-number">
+                ETAPA 1
+            </span>
+
+            <h3>Informação</h3>
+
+            <p>
+                O HIV afeta o sistema imunitário.
+                Atualmente existem tratamentos eficazes
+                para controlar a infeção.
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <span class="step-number">
+                ETAPA 2
+            </span>
+
+            <h3>Testagem e confirmação</h3>
+
+            <p>
+                Um resultado de rastreio precisa seguir
+                o algoritmo de testagem aplicável e,
+                quando necessário, confirmação adequada.
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <span class="step-number">
+                ETAPA 3
+            </span>
+
+            <h3>Avaliação clínica</h3>
+
+            <p>
+                Uma equipa de saúde avalia o estado clínico,
+                histórico, exames e outros fatores relevantes.
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <span class="step-number">
+                ETAPA 4
+            </span>
+
+            <h3>Tratamento antirretroviral</h3>
+
+            <p>
+                O tratamento é definido por profissionais
+                de saúde de acordo com protocolos clínicos
+                atualizados.
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <span class="step-number">
+                ETAPA 5
+            </span>
+
+            <h3>Adesão e acompanhamento</h3>
+
+            <p>
+                O acompanhamento regular ajuda a avaliar
+                a resposta ao tratamento e apoiar a adesão.
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <span class="step-number">
+                ETAPA 6
+            </span>
+
+            <h3>Monitorização</h3>
+
+            <p>
+                A equipa clínica acompanha indicadores
+                relevantes e ajusta a abordagem quando
+                clinicamente necessário.
+            </p>
+
+        </div>
+
+        <div class="sim-buttons">
+
+            <button
+                id="anterior"
+                class="btn btn-outline">
+                ← Anterior
+            </button>
+
+            <button
+                id="proximo"
+                class="btn btn-primary">
+                Próximo →
+            </button>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="card">
+
+        <h3>Importante</h3>
+
+        <p>
+            Não utilize esta simulação para escolher
+            medicamentos ou alterar tratamentos.
+            Procure uma unidade de saúde.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<script>
+
+const steps = document.querySelectorAll(".step");
+
+const progress =
+document.getElementById("progressBar");
+
+const titulo =
+document.getElementById("tituloEtapa");
+
+let atual = 0;
+
+function atualizar() {
+
+    steps.forEach((step, index) => {
+
+        step.classList.toggle(
+            "active",
+            index === atual
+        );
+
+    });
+
+    const percent =
+        ((atual + 1) / steps.length) * 100;
+
+    progress.style.width =
+        percent + "%";
+
+    titulo.textContent =
+        `Etapa ${atual + 1} — ${
+            [
+                "Informação",
+                "Testagem e confirmação",
+                "Avaliação clínica",
+                "Tratamento",
+                "Adesão e acompanhamento",
+                "Monitorização"
+            ][atual]
+        }`;
+
+    document.getElementById("anterior").disabled =
+        atual === 0;
+
+    document.getElementById("proximo").textContent =
+        atual === steps.length - 1
+        ? "Concluir"
+        : "Próximo →";
+}
+
+document
+.getElementById("proximo")
+.addEventListener("click", () => {
+
+    if (atual < steps.length - 1) {
+
+        atual++;
+
+        atualizar();
+
+    } else {
+
+        alert(
+            "Simulação concluída. Esta ferramenta é educativa e não substitui avaliação médica."
+        );
+
+    }
+
+});
+
+document
+.getElementById("anterior")
+.addEventListener("click", () => {
+
+    if (atual > 0) {
+
+        atual--;
+
+        atualizar();
+
+    }
+
+});
+
+atualizar();
+
+</script>
+
+</body>
+</html>

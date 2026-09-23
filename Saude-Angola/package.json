@@ -1,0 +1,13 @@
+{
+    "name": "saude-angola",
+    "version": "2.0.0",
+    "description": "Portal de saúde digital para Angola",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo - KERO DIGITAL</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="header-main">
+
+<a href="index.html" class="logo">KERO<span>.</span></a>
+
+<div class="search">
+<input id="searchInput" placeholder="Pesquisar produtos...">
+<button onclick="searchProducts()">🔎</button>
+</div>
+
+<div class="header-actions">
+<a href="conta.html" class="action">👤<br>Conta</a>
+<a href="favoritos.html" class="action">❤️<br>Favoritos</a>
+<a href="carrinho.html" class="action">
+🛒<br>Carrinho (<span class="cart-count">0</span>)
+</a>
+</div>
+
+</div>
+
+<nav class="navbar">
+<a href="index.html">Início</a>
+<a href="catalogo.html">Catálogo</a>
+<a href="promocoes.html">Promoções</a>
+<a href="catalogos.html">Catálogos</a>
+<a href="lojas.html">Lojas</a>
+</nav>
+
+</header>
+
+<section class="page-header">
+
+<div class="container">
+
+<h1>Catálogo</h1>
+
+<p>Explore todos os produtos disponíveis no KERO DIGITAL.</p>
+
+</div>
+
+</section>
+
+<main class="container">
+
+<div class="filters">
+
+<select>
+<option>Categoria</option>
+<option>Alimentação</option>
+<option>Bebidas</option>
+<option>Tecnologia</option>
+<option>Casa</option>
+<option>Gaming</option>
+</select>
+
+<select>
+<option>Ordenar por</option>
+<option>Menor preço</option>
+<option>Maior preço</option>
+<option>Mais vendidos</option>
+</select>
+
+<input placeholder="Pesquisar produto">
+
+</div>
+
+<div class="products">
+
+<div class="product">
+<div class="product-image">🍚</div>
+<div class="product-info">
+<h3>Arroz 5 kg</h3>
+<p>Alimentação</p>
+<span class="price">8.500 Kz</span>
+<button class="btn" onclick="addToCart('Arroz 5 kg',8500)">
+Adicionar
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-image">🥛</div>
+<div class="product-info">
+<h3>Leite</h3>
+<p>Alimentação</p>
+<span class="price">3.500 Kz</span>
+<button class="btn" onclick="addToCart('Leite',3500)">
+Adicionar
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-image">🧃</div>
+<div class="product-info">
+<h3>Sumo</h3>
+<p>Bebidas</p>
+<span class="price">2.500 Kz</span>
+<button class="btn" onclick="addToCart('Sumo',2500)">
+Adicionar
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-image">📱</div>
+<div class="product-info">
+<h3>Smartphone</h3>
+<p>Tecnologia</p>
+<span class="price">125.000 Kz</span>
+<button class="btn" onclick="addToCart('Smartphone',125000)">
+Adicionar
+</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-image">🎮</div>
+<div class="product-info">
+<h3>Comando Gaming</h3>
+<p>Gaming</p>
+<span class="price">45.000 Kz</span>
+<button class="btn" onclick="addToCart('Comando Gaming',45000)">
+Adicionar
+</button>
+</div>
+</div>
+
+</div>
+
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+```html
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Moda - KERO DIGITAL</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-main">
+
+<a href="index.html" class="logo">
+KERO<span>.</span>
+</a>
+
+<div class="search">
+
+<input id="searchInput"
+placeholder="Pesquisar moda...">
+
+<button onclick="searchProducts()">🔎</button>
+
+</div>
+
+<div class="header-actions">
+
+<a href="conta.html" class="action">👤<br>Conta</a>
+
+<a href="favoritos.html" class="action">❤️<br>Favoritos</a>
+
+<a href="carrinho.html" class="action">
+🛒<br>
+Carrinho (<span class="cart-count">0</span>)
+</a>
+
+</div>
+
+</div>
+
+<nav class="navbar">
+
+<a href="index.html">Início</a>
+<a href="catalogo.html">Catálogo</a>
+<a href="promocoes.html">Promoções</a>
+<a href="moda.html">Moda</a>
+
+</nav>
+
+</header>
+
+<section class="page-header">
+
+<div class="container">
+
+<h1>👕 Moda</h1>
+
+<p>Roupas, calçados e acessórios.</p>
+
+</div>
+
+</section>
+
+<main class="container">
+
+<section class="section">
+
+<div class="products">
+
+<div class="product">
+
+<div class="product-image">👕</div>
+
+<div class="product-info">
+
+<h3>T-Shirt</h3>
+
+<p>Camisola casual</p>
+
+<span class="price">7.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('T-Shirt',7500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">👖</div>
+
+<div class="product-info">
+
+<h3>Calça Jeans</h3>
+
+<p>Moda masculina/feminina</p>
+
+<span class="price">18.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Calça Jeans',18000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">👟</div>
+
+<div class="product-info">
+
+<h3>Sapatilhas</h3>
+
+<p>Calçado casual</p>
+
+<span class="price">25.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Sapatilhas',25000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🧢</div>
+
+<div class="product-info">
+
+<h3>Boné</h3>
+
+<p>Acessório</p>
+
+<span class="price">5.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Boné',5000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
+```

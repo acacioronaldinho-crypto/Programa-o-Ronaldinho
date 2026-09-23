@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Hospitais | Administração</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<section class="page-content">
+
+<div class="card">
+
+<h1>
+Gestão de Hospitais
+</h1>
+
+<p>
+Área administrativa para futura gestão
+do cadastro de unidades de saúde.
+</p>
+
+<br>
+
+<a
+href="dashboard.html"
+class="btn btn-primary">
+
+← Painel
+
+</a>
+
+</div>
+
+<br>
+
+<div
+id="hospitais"
+class="cards">
+</div>
+
+</section>
+
+<script>
+
+async function carregar(){
+
+const resposta =
+await fetch("../api/hospitais");
+
+const dados =
+await resposta.json();
+
+const area =
+document.getElementById("hospitais");
+
+dados.forEach(hospital=>{
+
+area.innerHTML += `
+
+<div class="card">
+
+<h3>
+${hospital.nome}
+</h3>
+
+<p>
+${hospital.provincia}
+</p>
+
+<p>
+${hospital.municipio}
+</p>
+
+<p>
+Status: ${hospital.status}
+</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+carregar();
+
+</script>
+
+</body>
+
+</html>

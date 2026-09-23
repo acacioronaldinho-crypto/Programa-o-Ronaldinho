@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alimentação - KERO DIGITAL</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-main">
+
+<a href="index.html" class="logo">
+KERO<span>.</span>
+</a>
+
+<div class="search">
+
+<input id="searchInput"
+placeholder="Pesquisar produtos...">
+
+<button onclick="searchProducts()">🔎</button>
+
+</div>
+
+<div class="header-actions">
+
+<a href="conta.html" class="action">
+👤<br>Conta
+</a>
+
+<a href="favoritos.html" class="action">
+❤️<br>Favoritos
+</a>
+
+<a href="carrinho.html" class="action">
+🛒<br>
+Carrinho (<span class="cart-count">0</span>)
+</a>
+
+</div>
+
+</div>
+
+<nav class="navbar">
+
+<a href="index.html">Início</a>
+<a href="catalogo.html">Catálogo</a>
+<a href="promocoes.html">Promoções</a>
+<a href="catalogos.html">Catálogos</a>
+<a href="lojas.html">Lojas</a>
+
+</nav>
+
+</header>
+
+
+<section class="page-header">
+
+<div class="container">
+
+<h1>Alimentação</h1>
+
+<p>
+Produtos alimentares para toda a família.
+</p>
+
+</div>
+
+</section>
+
+
+<main class="container">
+
+<section class="section">
+
+<div class="products">
+
+
+<div class="product">
+
+<div class="product-image">
+🍚
+</div>
+
+<div class="product-info">
+
+<h3>Arroz 5 kg</h3>
+
+<p>Arroz de qualidade</p>
+
+<span class="price">
+8.500 Kz
+</span>
+
+<button
+class="btn"
+onclick="addToCart('Arroz 5 kg',8500)">
+Adicionar ao carrinho
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+🍝
+</div>
+
+<div class="product-info">
+
+<h3>Massa</h3>
+
+<p>Massa alimentar</p>
+
+<span class="price">
+2.500 Kz
+</span>
+
+<button
+class="btn"
+onclick="addToCart('Massa',2500)">
+Adicionar ao carrinho
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+🥫
+</div>
+
+<div class="product-info">
+
+<h3>Conserva</h3>
+
+<p>Produto alimentar</p>
+
+<span class="price">
+3.000 Kz
+</span>
+
+<button
+class="btn"
+onclick="addToCart('Conserva',3000)">
+Adicionar ao carrinho
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+🥛
+</div>
+
+<div class="product-info">
+
+<h3>Leite</h3>
+
+<p>Leite alimentar</p>
+
+<span class="price">
+3.500 Kz
+</span>
+
+<button
+class="btn"
+onclick="addToCart('Leite',3500)">
+Adicionar ao carrinho
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+🍪
+</div>
+
+<div class="product-info">
+
+<h3>Biscoitos</h3>
+
+<p>Biscoitos variados</p>
+
+<span class="price">
+2.000 Kz
+</span>
+
+<button
+class="btn"
+onclick="addToCart('Biscoitos',2000)">
+Adicionar ao carrinho
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

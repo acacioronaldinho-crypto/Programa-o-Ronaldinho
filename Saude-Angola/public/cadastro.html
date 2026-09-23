@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Criar conta | SaúdeAngola</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body>
+
+<section class="page-content">
+
+<div class="form-container">
+
+<div class="logo">
+<span>+</span> SaúdeAngola
+</div>
+
+<br>
+
+<h1>
+Criar conta
+</h1>
+
+<p>
+Crie uma conta demonstrativa.
+</p>
+
+<form id="cadastroForm">
+
+<label>
+Nome completo
+</label>
+
+<input
+type="text"
+id="nome"
+required
+>
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+id="email"
+required
+>
+
+<label>
+Senha
+</label>
+
+<input
+type="password"
+id="senha"
+required
+>
+
+<label>
+Perfil
+</label>
+
+<select id="perfil">
+
+<option value="cidadao">
+Cidadão
+</option>
+
+<option value="profissional">
+Profissional de saúde
+</option>
+
+<option value="hospital">
+Hospital
+</option>
+
+<option value="farmacia">
+Farmácia
+</option>
+
+</select>
+
+<button
+type="submit"
+class="btn btn-primary">
+
+Criar conta
+
+</button>
+
+</form>
+
+<p id="mensagem"></p>
+
+<br>
+
+<a href="login.html">
+Já tenho conta
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+document
+.getElementById("cadastroForm")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+const conta = {
+
+nome:
+document.getElementById("nome").value,
+
+email:
+document.getElementById("email").value,
+
+senha:
+document.getElementById("senha").value,
+
+perfil:
+document.getElementById("perfil").value
+
+};
+
+localStorage.setItem(
+"saudeConta",
+JSON.stringify(conta)
+);
+
+document
+.getElementById("mensagem")
+.textContent =
+"Conta criada com sucesso.";
+
+setTimeout(()=>{
+
+window.location.href =
+"login.html";
+
+},1000);
+
+});
+
+</script>
+
+</body>
+
+</html>

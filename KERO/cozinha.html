@@ -1,0 +1,177 @@
+```html
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Cozinha - KERO DIGITAL</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-main">
+
+<a href="index.html" class="logo">
+KERO<span>.</span>
+</a>
+
+<div class="search">
+
+<input id="searchInput"
+placeholder="Pesquisar cozinha...">
+
+<button onclick="searchProducts()">🔎</button>
+
+</div>
+
+<div class="header-actions">
+
+<a href="conta.html" class="action">👤<br>Conta</a>
+
+<a href="favoritos.html" class="action">❤️<br>Favoritos</a>
+
+<a href="carrinho.html" class="action">
+🛒<br>Carrinho (<span class="cart-count">0</span>)
+</a>
+
+</div>
+
+</div>
+
+<nav class="navbar">
+
+<a href="index.html">Início</a>
+<a href="catalogo.html">Catálogo</a>
+<a href="promocoes.html">Promoções</a>
+<a href="cozinha.html">Cozinha</a>
+
+</nav>
+
+</header>
+
+<section class="page-header">
+
+<div class="container">
+
+<h1>🍳 Cozinha</h1>
+
+<p>Utensílios e equipamentos para a sua cozinha.</p>
+
+</div>
+
+</section>
+
+<main class="container">
+
+<section class="section">
+
+<div class="products">
+
+<div class="product">
+
+<div class="product-image">🍳</div>
+
+<div class="product-info">
+
+<h3>Frigideira</h3>
+
+<p>Utensílio de cozinha</p>
+
+<span class="price">8.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Frigideira',8500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🥘</div>
+
+<div class="product-info">
+
+<h3>Panela</h3>
+
+<p>Panela doméstica</p>
+
+<span class="price">12.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Panela',12000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🔪</div>
+
+<div class="product-info">
+
+<h3>Conjunto de Facas</h3>
+
+<p>Utensílios de cozinha</p>
+
+<span class="price">15.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Conjunto de Facas',15000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🥄</div>
+
+<div class="product-info">
+
+<h3>Conjunto de Talheres</h3>
+
+<p>Talheres</p>
+
+<span class="price">10.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Conjunto de Talheres',10000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
+```

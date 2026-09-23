@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Administração - KERO DIGITAL</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+<link rel="stylesheet"
+href="../css/admin.css">
+
+</head>
+
+<body>
+
+<div class="admin-login">
+
+<h1>KERO DIGITAL</h1>
+
+<h2>Área administrativa</h2>
+
+<div class="form">
+
+<div class="form-group">
+
+<label>Utilizador</label>
+
+<input
+type="text"
+id="adminUser"
+placeholder="Utilizador">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Senha</label>
+
+<input
+type="password"
+id="adminPassword"
+placeholder="Senha">
+
+</div>
+
+
+<button
+class="btn"
+onclick="loginAdmin()">
+
+Entrar
+
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+function loginAdmin() {
+
+const user =
+document.getElementById("adminUser").value;
+
+const password =
+document.getElementById("adminPassword").value;
+
+if(user === "admin" && password === "123456") {
+
+window.location.href =
+"dashboard.html";
+
+} else {
+
+alert("Dados incorretos.");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

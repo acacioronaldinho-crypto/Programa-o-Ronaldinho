@@ -1,0 +1,164 @@
+```html
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talho - KERO DIGITAL</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="header-main">
+
+<a href="index.html" class="logo">
+KERO<span>.</span>
+</a>
+
+<div class="search">
+<input id="searchInput" placeholder="Pesquisar carnes...">
+<button onclick="searchProducts()">🔎</button>
+</div>
+
+<div class="header-actions">
+
+<a href="conta.html" class="action">
+👤<br>Conta
+</a>
+
+<a href="favoritos.html" class="action">
+❤️<br>Favoritos
+</a>
+
+<a href="carrinho.html" class="action">
+🛒<br>Carrinho (<span class="cart-count">0</span>)
+</a>
+
+</div>
+
+</div>
+
+<nav class="navbar">
+<a href="index.html">Início</a>
+<a href="catalogo.html">Catálogo</a>
+<a href="promocoes.html">Promoções</a>
+<a href="talho.html">Talho</a>
+</nav>
+
+</header>
+
+<section class="page-header">
+
+<div class="container">
+
+<h1>🥩 Talho</h1>
+
+<p>Carnes e produtos selecionados para as suas refeições.</p>
+
+</div>
+
+</section>
+
+<main class="container">
+
+<section class="section">
+
+<div class="products">
+
+<div class="product">
+
+<div class="product-image">🥩</div>
+
+<div class="product-info">
+
+<h3>Carne de Vaca</h3>
+<p>Carne fresca</p>
+
+<span class="price">7.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Carne de Vaca',7500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🍗</div>
+
+<div class="product-info">
+
+<h3>Frango Inteiro</h3>
+<p>Frango fresco</p>
+
+<span class="price">8.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Frango Inteiro',8500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🥩</div>
+
+<div class="product-info">
+
+<h3>Bife de Vaca</h3>
+<p>Corte selecionado</p>
+
+<span class="price">9.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Bife de Vaca',9500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🌭</div>
+
+<div class="product-info">
+
+<h3>Salsichas</h3>
+<p>Embalagem familiar</p>
+
+<span class="price">4.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Salsichas',4500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
+```

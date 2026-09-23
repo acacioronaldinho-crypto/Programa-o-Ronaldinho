@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora simples</title>
+</head>
+<body>
+
+    <h2>Calculadora JS</h2>
+
+    <input type="number"  id="num1">
+    <select id="operacao">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+     </select>
+     <input type="number" id="num2">
+     <button onclick="calcular()">calcular</button>
+     <h3 id="resultado"></h3>
+
+     <script>
+        function calcular(){
+            let n1 = parseFloat(document.getElementById(`num1`).value);
+            let n2 = parseFloat(document.getElementById(`num2`).value);
+            let op=
+           document.getElementById(`operacao`).value;
+           let rese;
+
+           if(op===`+`) res=n1+n2;
+            else if(op===`-`) res=n1-n2;
+             else if(op===`*`) res=n1*n2;
+              else if(op===`/`) res=n2!==0?n1/n2:`Erro`;
+
+              document.getElementById(`resultado`).innerText=`Resutado:`+res;
+                 }
+    </script>
+    
+</body>
+</html>

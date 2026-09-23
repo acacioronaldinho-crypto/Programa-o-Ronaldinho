@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KERO DIGITAL - Supermercado Online</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <span>Bem-vindo ao KERO DIGITAL</span>
+    <span>Entregas e compras online em Angola</span>
+</div>
+
+<header>
+
+<div class="header-main">
+
+<a href="index.html" class="logo">
+KERO<span>.</span>
+</a>
+
+<div class="search">
+<input id="searchInput" placeholder="O que procura hoje?">
+<button onclick="searchProducts()">🔎</button>
+</div>
+
+<div class="header-actions">
+
+<a href="conta.html" class="action">
+<i>👤</i>
+Conta
+</a>
+
+<a href="favoritos.html" class="action">
+<i>❤️</i>
+Favoritos
+</a>
+
+<a href="carrinho.html" class="action">
+<i>🛒</i>
+Carrinho (<span class="cart-count">0</span>)
+</a>
+
+</div>
+
+</div>
+
+<nav class="navbar">
+
+<a href="index.html">Início</a>
+<a href="catalogo.html">Catálogo</a>
+<a href="promocoes.html">🔥 Promoções</a>
+<a href="catalogos.html">📖 Catálogos</a>
+<a href="gaming.html">🎮 Gaming</a>
+<a href="tecnologia.html">📱 Tecnologia</a>
+<a href="casa.html">🏠 Casa</a>
+<a href="bebe.html">👶 Bebé</a>
+<a href="lojas.html">🏪 Lojas</a>
+
+</nav>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Bem-vindo ao KERO DIGITAL</h1>
+
+<p>
+Tudo o que precisa para a sua casa, alimentação,
+tecnologia e muito mais, num só lugar.
+</p>
+
+<a href="catalogo.html" class="btn btn-yellow">
+Comprar agora
+</a>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<section class="section">
+
+<div class="section-title">
+<h2>Comprar por categoria</h2>
+<a href="catalogo.html">Ver todas</a>
+</div>
+
+<div class="categories">
+
+<a class="category" href="alimentacao.html">
+<div class="category-icon">🍎</div>
+Alimentação
+</a>
+
+<a class="category" href="bebidas.html">
+<div class="category-icon">🥤</div>
+Bebidas
+</a>
+
+<a class="category" href="frescos.html">
+<div class="category-icon">🥬</div>
+Frescos
+</a>
+
+<a class="category" href="talho.html">
+<div class="category-icon">🥩</div>
+Talho
+</a>
+
+<a class="category" href="peixaria.html">
+<div class="category-icon">🐟</div>
+Peixaria
+</a>
+
+<a class="category" href="padaria.html">
+<div class="category-icon">🥖</div>
+Padaria
+</a>
+
+<a class="category" href="casa.html">
+<div class="category-icon">🏠</div>
+Casa
+</a>
+
+<a class="category" href="tecnologia.html">
+<div class="category-icon">📱</div>
+Tecnologia
+</a>
+
+<a class="category" href="gaming.html">
+<div class="category-icon">🎮</div>
+Gaming
+</a>
+
+<a class="category" href="moda.html">
+<div class="category-icon">👕</div>
+Moda
+</a>
+
+<a class="category" href="bebe.html">
+<div class="category-icon">👶</div>
+Bebé
+</a>
+
+<a class="category" href="higiene.html">
+<div class="category-icon">🧴</div>
+Higiene
+</a>
+
+<a class="category" href="limpeza.html">
+<div class="category-icon">🧹</div>
+Limpeza
+</a>
+
+<a class="category" href="cozinha.html">
+<div class="category-icon">🍳</div>
+Cozinha
+</a>
+
+<a class="category" href="mobiliario.html">
+<div class="category-icon">🛋️</div>
+Mobiliário
+</a>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>🔥 Ofertas em destaque</h2>
+
+<a href="promocoes.html">
+Ver promoções
+</a>
+
+</div>
+
+<div class="products">
+
+<div class="product">
+
+<span class="badge">-20%</span>
+
+<div class="product-image">📺</div>
+
+<div class="product-info">
+
+<h3>Smart TV 43"</h3>
+
+<p>Televisor Smart LED</p>
+
+<span class="old-price">350.000 Kz</span>
+
+<span class="price">280.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Smart TV 43',280000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<span class="badge">OFERTA</span>
+
+<div class="product-image">📱</div>
+
+<div class="product-info">
+
+<h3>Smartphone</h3>
+
+<p>Smartphone Android</p>
+
+<span class="price">125.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Smartphone Android',125000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🎮</div>
+
+<div class="product-info">
+
+<h3>Consola Gaming</h3>
+
+<p>Console para jogos</p>
+
+<span class="price">450.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Consola Gaming',450000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🧺</div>
+
+<div class="product-info">
+
+<h3>Cesto de compras</h3>
+
+<p>Produto para casa</p>
+
+<span class="price">15.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Cesto de compras',15000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🍚</div>
+
+<div class="product-info">
+
+<h3>Arroz</h3>
+
+<p>Arroz 5 kg</p>
+
+<span class="price">8.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Arroz 5 kg',8500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div class="banner-grid">
+
+<div class="banner green">
+
+<h2>Compras para toda a família</h2>
+
+<p>
+Encontre alimentação, produtos para casa,
+higiene, tecnologia e muito mais.
+</p>
+
+<br>
+
+<a href="catalogo.html" class="btn btn-yellow">
+Explorar catálogo
+</a>
+
+</div>
+
+<div class="banner yellow">
+
+<h2>Entrega em casa</h2>
+
+<p>
+Faça a sua encomenda sem sair de casa.
+</p>
+
+<br>
+
+<a href="entregas.html" class="btn">
+Saber mais
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+</main>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>KERO DIGITAL</h3>
+<p>
+O seu supermercado digital em Angola.
+</p>
+</div>
+
+<div>
+<h3>Comprar</h3>
+<ul>
+<li><a href="catalogo.html">Catálogo</a></li>
+<li><a href="promocoes.html">Promoções</a></li>
+<li><a href="catalogos.html">Catálogos</a></li>
+<li><a href="carrinho.html">Carrinho</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Atendimento</h3>
+<ul>
+<li><a href="contactos.html">Contactos</a></li>
+<li><a href="entregas.html">Entregas</a></li>
+<li><a href="pagamentos.html">Pagamentos</a></li>
+<li><a href="lojas.html">Nossas lojas</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Minha conta</h3>
+<ul>
+<li><a href="conta.html">Minha conta</a></li>
+<li><a href="encomendas.html">Encomendas</a></li>
+<li><a href="favoritos.html">Favoritos</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 KERO DIGITAL — Projeto demonstrativo
+</div>
+
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

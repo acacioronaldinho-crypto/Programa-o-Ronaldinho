@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Entrar | SaúdeAngola</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body>
+
+<section class="page-content">
+
+<div class="form-container">
+
+<div class="logo">
+<span>+</span> SaúdeAngola
+</div>
+
+<br>
+
+<h1>
+Entrar
+</h1>
+
+<p>
+Acesse a sua conta.
+</p>
+
+<form id="loginForm">
+
+<label>
+Email
+</label>
+
+<input
+type="email"
+id="email"
+required
+>
+
+<label>
+Senha
+</label>
+
+<input
+type="password"
+id="senha"
+required
+>
+
+<button
+class="btn btn-primary"
+type="submit">
+
+Entrar
+
+</button>
+
+</form>
+
+<p id="mensagem"></p>
+
+<br>
+
+<p>
+Ainda não tem conta?
+<a href="cadastro.html">
+Criar conta
+</a>
+</p>
+
+<p>
+<a href="index.html">
+← Voltar ao início
+</a>
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+document
+.getElementById("loginForm")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+const email =
+document.getElementById("email").value;
+
+const senha =
+document.getElementById("senha").value;
+
+const conta =
+JSON.parse(
+localStorage.getItem("saudeConta")
+);
+
+if(
+conta &&
+conta.email === email &&
+conta.senha === senha
+){
+
+localStorage.setItem(
+"saLogged",
+"true"
+);
+
+localStorage.setItem(
+"saUser",
+JSON.stringify(conta)
+);
+
+window.location.href =
+"cidadao/dashboard.html";
+
+}else{
+
+document
+.getElementById("mensagem")
+.textContent =
+"Email ou senha incorretos.";
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Simulador Hepatites | SaúdeAngola</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+<style>
+
+.simulator {
+    max-width: 850px;
+    margin: auto;
+}
+
+.progress {
+    height: 10px;
+    background: #dcebed;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 25px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #00a896;
+    transition: .4s;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.sim-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+<span>+</span> SaúdeAngola
+</div>
+
+<a href="index.html"
+class="btn btn-outline">
+Voltar
+</a>
+
+</header>
+
+<section class="page-header">
+
+<span class="badge">
+SIMULAÇÃO EDUCATIVA
+</span>
+
+<h1>
+Hepatites Virais
+</h1>
+
+<p>
+Jornada educativa de avaliação e acompanhamento.
+</p>
+
+</section>
+
+<section class="page-content">
+
+<div class="simulator">
+
+<div class="card">
+
+<h2 id="titulo">
+Etapa 1 — Informação
+</h2>
+
+<div class="progress">
+
+<div
+id="barra"
+class="progress-bar"
+style="width:16%">
+</div>
+
+</div>
+
+<div class="step active">
+
+<h3>
+1. Informação
+</h3>
+
+<p>
+As hepatites virais são infeções que podem
+afetar o fígado. Existem diferentes tipos
+com características distintas.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>
+2. Testagem
+</h3>
+
+<p>
+A identificação do tipo de hepatite pode
+exigir testes específicos determinados
+pelos profissionais.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>
+3. Avaliação clínica e laboratorial
+</h3>
+
+<p>
+A equipa clínica pode avaliar sintomas,
+histórico, função hepática e outros
+elementos relevantes.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>
+4. Plano terapêutico individual</h3>
+
+<p>
+A abordagem depende do tipo de hepatite,
+da situação clínica e dos protocolos
+atualizados.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>
+5. Acompanhamento
+</h3>
+
+<p>
+O acompanhamento permite avaliar a evolução
+e a resposta ao tratamento quando aplicável.
+</p>
+
+</div>
+
+<div class="step">
+
+<h3>
+6. Prevenção
+</h3>
+
+<p>
+Medidas de prevenção dependem do tipo
+de hepatite e podem incluir vacinação,
+redução de riscos e outras medidas.
+</p>
+
+</div>
+
+<div class="sim-buttons">
+
+<button
+id="anterior"
+class="btn btn-outline">
+← Anterior
+</button>
+
+<button
+id="proximo"
+class="btn btn-primary">
+Próximo →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const steps =
+document.querySelectorAll(".step");
+
+const nomes = [
+"Informação",
+"Testagem",
+"Avaliação clínica e laboratorial",
+"Plano terapêutico individual",
+"Acompanhamento",
+"Prevenção"
+];
+
+let atual = 0;
+
+function atualizar(){
+
+steps.forEach((step,index)=>{
+
+step.classList.toggle(
+"active",
+index === atual
+);
+
+});
+
+document
+.getElementById("barra")
+.style.width =
+((atual + 1) /
+steps.length * 100) + "%";
+
+document
+.getElementById("titulo")
+.textContent =
+`Etapa ${atual + 1} — ${nomes[atual]}`;
+
+document
+.getElementById("anterior")
+.disabled =
+atual === 0;
+
+document
+.getElementById("proximo")
+.textContent =
+atual === steps.length - 1
+? "Concluir"
+: "Próximo →";
+
+}
+
+document
+.getElementById("proximo")
+.addEventListener("click",()=>{
+
+if(atual < steps.length - 1){
+
+atual++;
+
+atualizar();
+
+}else{
+
+alert(
+"Simulação concluída. Procure uma unidade de saúde para avaliação individual."
+);
+
+}
+
+});
+
+document
+.getElementById("anterior")
+.addEventListener("click",()=>{
+
+if(atual > 0){
+
+atual--;
+
+atualizar();
+
+}
+
+});
+
+atualizar();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+```html
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Limpeza - KERO DIGITAL</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-main">
+
+<a href="index.html" class="logo">
+KERO<span>.</span>
+</a>
+
+<div class="search">
+
+<input id="searchInput"
+placeholder="Pesquisar produtos de limpeza...">
+
+<button onclick="searchProducts()">🔎</button>
+
+</div>
+
+<div class="header-actions">
+
+<a href="conta.html" class="action">
+👤<br>Conta
+</a>
+
+<a href="favoritos.html" class="action">
+❤️<br>Favoritos
+</a>
+
+<a href="carrinho.html" class="action">
+🛒<br>
+Carrinho (<span class="cart-count">0</span>)
+</a>
+
+</div>
+
+</div>
+
+<nav class="navbar">
+
+<a href="index.html">Início</a>
+<a href="catalogo.html">Catálogo</a>
+<a href="promocoes.html">Promoções</a>
+<a href="limpeza.html">Limpeza</a>
+
+</nav>
+
+</header>
+
+<section class="page-header">
+
+<div class="container">
+
+<h1>🧹 Limpeza</h1>
+
+<p>Produtos para manter a sua casa limpa.</p>
+
+</div>
+
+</section>
+
+<main class="container">
+
+<section class="section">
+
+<div class="products">
+
+<div class="product">
+
+<div class="product-image">🧴</div>
+
+<div class="product-info">
+
+<h3>Detergente</h3>
+
+<p>Detergente para louça</p>
+
+<span class="price">2.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Detergente',2500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🧹</div>
+
+<div class="product-info">
+
+<h3>Vassoura</h3>
+
+<p>Limpeza doméstica</p>
+
+<span class="price">4.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Vassoura',4000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🧽</div>
+
+<div class="product-info">
+
+<h3>Esponjas</h3>
+
+<p>Esponjas para cozinha</p>
+
+<span class="price">1.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Esponjas',1500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🧴</div>
+
+<div class="product-info">
+
+<h3>Desinfetante</h3>
+
+<p>Limpeza e desinfeção</p>
+
+<span class="price">4.500 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Desinfetante',4500)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🧻</div>
+
+<div class="product-info">
+
+<h3>Papel Higiénico</h3>
+
+<p>Pack familiar</p>
+
+<span class="price">5.000 Kz</span>
+
+<button class="btn"
+onclick="addToCart('Papel Higiénico',5000)">
+Adicionar
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
+```

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Spider-Man Web Swing Prototype</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+            color: white;
+        }
+        canvas {
+            background: #223;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+        #instrucoes {
+            position: absolute;
+            top: 10px;
+            text-align: center;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="instrucoes">
+    <h2>Spider-Man - Mecânica de Teia</h2>
+    <p>Clique e segure nos blocos cinzas para **lançar a teia** e balançar! Solte para voar.</p>
+</div>
+
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+// Configurações de Física
+const gravity = 0.4;
+const friction = 0.99;
+
+// O Herói (Spider-Man)
+const spider = {
+    x: 200,
+    y: 400,
+    vx: 5,
+    vy: 0,
+    radius: 15,
+    color: "#E23636" // Vermelho clássico do Aranha
+};
+
+// Teia
+const web = {
+    anchorX: 0,
+    anchorY: 0,
+    length: 0,
+    isActive: false
+};
+
+// Prédios / Pontos de fixação da teia
+const buildings = [
+    { x: 150, y: 100, width: 80, height: 120 },
+    { x: 350, y: 50, width: 100, height: 180 },
+    { x: 600, y: 120, width: 90, height: 100 }
+];
+
+// Controles do Mouse
+let isMouseDown = false;
+
+window.addEventListener("mousedown", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    // Verifica se o clique foi em algum prédio para fixar a teia
+    buildings.forEach(b => {
+        if (mouseX >= b.x && mouseX <= b.x + b.width && mouseY >= b.y && mouseY <= b.y + b.height) {
+            web.anchorX = mouseX;
+            web.anchorY = mouseY;
+            // Calcula a distância atual entre o Aranha e o ponto da teia
+            const dx = spider.x - web.anchorX;
+            const dy = spider.y - web.anchorY;
+            web.length = Math.sqrt(dx * dx + dy * dy);
+            web.isActive = true;
+        }
+    });
+});
+
+window.addEventListener("mouseup", () => {
+    web.isActive = false;
+});
+
+// Loop principal do Jogo
+function update() {
+    // 1. Aplicar gravidade
+    spider.vy += gravity;
+
+    if (web.isActive) {
+        // Física do pêndulo (balanço da teia)
+        let dx = spider.x - web.anchorX;
+        let dy = spider.y - web.anchorY;
+        let currentDist = Math.sqrt(dx * dx + dy * dy);
+
+        // Se esticar além do comprimento da teia, aplica a força de tensão
+        if (currentDist > web.length) {
+            let nx = dx / currentDist;
+            let ny = dy / currentDist;
+            
+            // Projeção da velocidade na direção da teia
+            let velAlongWeb = spider.vx * nx + spider.vy * ny;
+            
+            // Remove a velocidade que sai do raio da teia (mantém o movimento circular)
+            if (velAlongWeb > 0) {
+                spider.vx -= velAlongWeb * nx;
+                spider.vy -= velAlongWeb * ny;
+            }
+
+            // Restringe o jogador ao comprimento máximo da teia
+            spider.x = web.anchorX + nx * web.length;
+            spider.y = web.anchorY + ny * web.length;
+        }
+    }
+
+    // 2. Atualizar posições e aplicar fricção do ar
+    spider.vx *= friction;
+    spider.vy *= friction;
+    spider.x += spider.vx;
+    spider.y += spider.vy;
+
+    // Limites da tela (Colisão básica com o chão e paredes)
+    if (spider.y > canvas.height - spider.radius) {
+        spider.y = canvas.height - spider.radius;
+        spider.vy = 0;
+        spider.vx *= 0.8; // Fricção extra no chão
+    }
+    if (spider.x < spider.radius) { spider.x = spider.radius; spider.vx *= -0.5; }
+    if (spider.x > canvas.width - spider.radius) { spider.x = canvas.width - spider.radius; spider.vx *= -0.5; }
+
+    draw();
+    requestAnimationFrame(update);
+}
+
+// Renderização gráfica
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Desenhar Prédios
+    ctx.fillStyle = "#444554";
+    buildings.forEach(b => {
+        ctx.fillRect(b.x, b.y, b.width, b.height);
+        // Janelas simples para dar efeito de cidade
+        ctx.fillStyle = "#FFE066";
+        for (let jx = b.x + 10; jx < b.x + b.width - 10; jx += 20) {
+            for (let jy = b.y + 10; jy < b.y + b.height - 10; jy += 30) {
+                if (Math.random() > 0.3) ctx.fillRect(jx, jy, 8, 12);
+            }
+        }
+        ctx.fillStyle = "#444554";
+    });
+
+    // Desenhar a Teia
+    if (web.isActive) {
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(spider.x, spider.y);
+        ctx.lineTo(web.anchorX, web.anchorY);
+        ctx.stroke();
+    }
+
+    // Desenhar o Spider-Man
+    ctx.fillStyle = spider.color;
+    ctx.beginPath();
+    ctx.arc(spider.x, spider.y, spider.radius, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Detalhe azul da roupa
+    ctx.fillStyle = "#2F80ED";
+    ctx.beginPath();
+    ctx.arc(spider.x, spider.y, spider.radius - 6, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+// Iniciar o jogo
+update();
+</script>
+
+</body>
+</html>

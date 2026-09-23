@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Conteúdo | Administração</title>
+
+<link rel="stylesheet"
+href="../css/style.css">
+
+</head>
+
+<body>
+
+<section class="page-content">
+
+<div class="form-container">
+
+<h1>
+Publicar conteúdo
+</h1>
+
+<form id="conteudo">
+
+<label>
+Título
+</label>
+
+<input
+type="text"
+id="titulo"
+required
+>
+
+<label>
+Resumo
+</label>
+
+<textarea
+id="resumo"
+required>
+</textarea>
+
+<button
+type="submit"
+class="btn btn-primary">
+
+Publicar
+
+</button>
+
+</form>
+
+<p id="resultado"></p>
+
+<br>
+
+<a href="dashboard.html">
+← Painel administrativo
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+document
+.getElementById("conteudo")
+.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+document
+.getElementById("resultado")
+.textContent =
+"Conteúdo registado como demonstração.";
+
+this.reset();
+
+});
+
+</script>
+
+</body>
+
+</html>
